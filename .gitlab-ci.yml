@@ -1,2 +1,6 @@
 before_script:
     - docker ps
+
+test:
+    script:
+        echo "Working"
