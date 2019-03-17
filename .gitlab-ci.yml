@@ -1,2 +1,2 @@
 before_script:
-    docker ps
+    - docker ps
