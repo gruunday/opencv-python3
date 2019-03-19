@@ -15,8 +15,6 @@ build:
     script:
         - docker build -t opencv-python .
         - docker tag opencv-python:latest gruunday/opencv-python:latest
-
-deploy:
-    script:
+          # Deploy
         - docker login -u gruunday -p $DOCKERPASS
         - docker push gruunday/opencv-python:latest  
