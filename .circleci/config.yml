@@ -1,16 +1,17 @@
 version: 2
 jobs:
   build:
-    docker:
-        - image: docker:stable
-
-    variables:
+    environment:
         DOCKER_HOST: tcp://docker:2375/
         DOCKER_DRIVER: overlay2
+
+    docker:
+        - image: docker:stable
 
     services:
         - doocker:dind
 
+    steps:
       - run:
           name: Image Build
           command: docker build -t opencv-python .
