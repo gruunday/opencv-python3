@@ -17,7 +17,9 @@ jobs:
       - run:
           name: Image Build
           command: docker build -t opencv-python3 .
-
       - run:
           name: Image Tag
-          command: docker tag opencv-python:latest gruunday/opencv-python:latest
+          command: docker tag opencv-python3:latest gruunday/opencv-python3:latest
+      - run:
+          name: Push Image
+          command: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" |  docker push gruunday/opencv-python3:latest
