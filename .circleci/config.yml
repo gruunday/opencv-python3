@@ -12,7 +12,7 @@ jobs:
         - doocker:dind
 
     steps:
-      - ls
+      - checkout
       - run:
           name: Image Build
           command: docker build -t opencv-python3 .
