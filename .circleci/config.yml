@@ -13,9 +13,7 @@ jobs:
 
     steps:
       - checkout
-      - run:
-          name: Start Docker
-          command: systemctl start docker
+      - setup_remote_docker
       - run:
           name: Image Build
           command: docker build -t opencv-python3 .
