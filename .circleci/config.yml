@@ -22,4 +22,4 @@ jobs:
           command: docker tag opencv-python3:latest gruunday/opencv-python3:latest
       - run:
           name: Push Image
-          command: echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin |  docker push gruunday/opencv-python3:latest
+          command: echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin && docker push gruunday/opencv-python3:latest
