@@ -33,6 +33,11 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && \
     pip3 install numpy && \
     rm -rf get-pip.py
 
+RUN git clone git://github.com/trendmicro/tlsh.git && \
+    cd tlsh && git checkout master && ./make.sh && \
+    cd py_ext/ && python3 ./setup.py build && python3 ./setup.py install && \
+    cd ../.. && rm -rf tlsh
+
 RUN cd ~/ && git clone https://github.com/opencv/opencv.git && \
              git clone https://github.com/opencv/opencv_contrib.git && \
              mkdir -p ~/opencv/build && cd ~/opencv/build && \
